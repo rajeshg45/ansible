@@ -1,13 +1,13 @@
 ---
 - hosts: all
-  beacome: ture
+  become: true
   tasks:
-    -name: Install apache httpd
+    - name: Install apache httpd
     ansible.builtin.apt:
       name: apache2
       state: present
       update_cache: yes
-    -name: Copy file with owner permissions
+    - name: Copy file with owner permissions
     ansible.builtin.copy: 
       src: index.html
       dest: /var/www/html
